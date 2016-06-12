@@ -2,8 +2,8 @@ var express=require('express');
 var app=express();
 var path=require('path');
 var calculate=require('./modules/calc');
-// var bodyParser=require('body-parser');
-// var urlencodedParser = bodyParser.urlencoded( { extended: false } );
+var bodyParser=require('body-parser');
+var urlencodedParser = bodyParser.urlencoded( { extended: false } );
 
 app.use(express.static('public'));
 //set up server
@@ -29,9 +29,9 @@ app.get('/calc',function (req, res) {
 app.get('/index', function (req, res) {
   res.sendFile( path.resolve( 'public/index.html' ) );
 });
-app.get('/pathGet', function (req, res) {
+app.post('/pathpost', urlencodedParser, function (req, res) {
 
-  res.write(calculate(req.body.inputX,req.body.inputY, req.body.operation));
+  res.write(calculate(req.body.inputX ,req.body.inputY, req.body.operation));
   res.end();
 });
 //req.query.inputX,req.query.inputY, req.query.operation
