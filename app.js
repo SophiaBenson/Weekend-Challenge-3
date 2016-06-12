@@ -31,7 +31,7 @@ app.get('/index', function (req, res) {
 });
 app.get('/pathGet', function (req, res) {
 
-  res.write(calculate(req.query.inputX,req.query.inputY, req.query.operation));
+  res.write(calculate(req.body.inputX,req.body.inputY, req.body.operation));
   res.end();
 });
 //req.query.inputX,req.query.inputY, req.query.operation
