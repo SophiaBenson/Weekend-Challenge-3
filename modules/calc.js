@@ -18,7 +18,7 @@ var calculatePath = function (var1, var2, var3) {
     return(div);
   }
   else{
-    return("bionic bird is sad");
+    return("Bionic Bird is sad");
   }
   // return("Bionic Bird is Calculating: " + inputX + operation + inputY);
 };
