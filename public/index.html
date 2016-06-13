@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Weekend 3 Calculator</title>
-    <!-- <script src="./client.js" charset="utf-8"></script> -->
+    <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script src="./client.js" charset="utf-8"></script>
   </head>
   <body>
     <h1>Calculate!</h1>
@@ -11,7 +12,7 @@
     <!-- <form action='http://localhost:8080/pathGet' method='get'>
       <input type="text" name="inputName" value="">
       <input type="submit" value="Submit"> -->
-    <form  action="http://localhost:3000/pathpost" method="post">
+    <form   method="post">
       <input type="text" name="inputX" id="inputX" value="">
       <select class="options" name="operation" id="operation">
         <option value="+">+</option>
@@ -26,6 +27,9 @@
       <input type="text" name="inputY" id="inputY" value="">
       <input type="submit" id="submit" value="Submit">
     </form>
+    <div id="outputDiv">
+<button type="reset" name="reset">Reset</button>
+    </div>
     <!-- <form  action="http://localhost:3000/pathGetSubstract" method="get">
 
       <button type="input" id="substract">+</button>

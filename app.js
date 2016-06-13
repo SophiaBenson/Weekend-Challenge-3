@@ -5,6 +5,7 @@ var calculate=require('./modules/calc');
 var bodyParser=require('body-parser');
 var urlencodedParser = bodyParser.urlencoded( { extended: false } );
 
+
 app.use(express.static('public'));
 //set up server
 var server = app.listen(process.env.PORT || 3000, function () {
@@ -30,8 +31,13 @@ app.get('/index', function (req, res) {
   res.sendFile( path.resolve( 'public/index.html' ) );
 });
 app.post('/pathpost', urlencodedParser, function (req, res) {
+// var append= Number(req.body.x) + req.body.z + Number(req.body.y);
+  var append = (calculate(req.body.x ,req.body.y, req.body.z));
+// append();
+var string = append.toString();
+  res.send(string + "<br><button id='clear'>clear</button> ");
 
-  res.write(calculate(req.body.inputX ,req.body.inputY, req.body.operation));
-  res.end();
+
+
 });
 //req.query.inputX,req.query.inputY, req.query.operation
