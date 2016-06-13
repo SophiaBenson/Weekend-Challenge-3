@@ -5,15 +5,18 @@
     <title>Weekend 3 Calculator</title>
     <script src="./jquery-3.0.0.min.js" charset="utf-8"></script>
     <script src="./client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./bootstrap.min.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body>
+  <body class="text-center bg-info">
+    <img src="./smart.jpg" alt="Responsive image" class="text-center img-circle" />
     <h1>Calculate!</h1>
-    <h2>Get Form</h2>
+    <br>
+    <!-- <h4></h4> -->
     <!-- <form action='http://localhost:8080/pathGet' method='get'>
       <input type="text" name="inputName" value="">
       <input type="submit" value="Submit"> -->
-    <form   method="post">
-      <input type="text" name="inputX" id="inputX" value="">
+    <form   method="post" class="text-center">
+      <input type="text" name="inputX" id="inputX" value="" placeholder="Number">
       <select class="options" name="operation" id="operation">
         <option value="+">+</option>
         <option value="-">-</option>
@@ -24,13 +27,19 @@
       <button type="input" id="substract">-</button>
       <button type="input" id="multiply">x</button>
       <button type="input" id="divide">/</button> -->
-      <input type="text" name="inputY" id="inputY" value="">
-      <input type="button" id="submit" value="Submit">
+      <input type="text" name="inputY" id="inputY" value="" placeholder="Number">
+      <br>
+      <br><input type="button" id="submit" value="Submit" class="btn btn-primary">
     </form>
-    <div id="outputDiv">
+    <div class="text-center" id="outputDiv">
 
     </div>
-    <button type="button" id="reset" name="reset">Reset</button>
+    <br>
+    <div class="text-center">
+
+
+    <button class="btn btn-info" type="button" id="reset" name="reset">Reset</button>
+  </div>
     <!-- <form  action="http://localhost:3000/pathGetSubstract" method="get">
 
       <button type="input" id="substract">+</button>
