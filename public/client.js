@@ -2,7 +2,7 @@ console.log( 'script.js sourced' );
 
 $( document ).ready( function() {
 
-
+clear();
   //out button click
     console.log( "jQuery ready" );
     $('#submit').on('click', function(event){
@@ -13,9 +13,16 @@ $( document ).ready( function() {
     });
 });
 //attempt at clear button
-var clear = function () {
-  $('#clear').load('./index.html');
-};
+function clear (){
+  $('#reset').on('click', function(){
+    console.log('clear clicked');
+    $('#outputDiv').empty();
+    $('#inputX').val('');
+    // $('#inputX').empty();
+    $('#inputY').val('');
+    // $('#inputY').empty();
+  });
+}
 var processResponse = function( response )
 {
   console.log( 'in processResponse: ' + response );
@@ -24,9 +31,9 @@ var processResponse = function( response )
   // with out output data
   newParagraph.textContent = response;
   // empty our output div
-  document.getElementById('#outputDiv').innerHTML='';
+  // document.getElementById('#outputDiv').innerHTML='';
   // append newParagraph to output
-  document.getElementById('#outputDiv').appendChild( newParagraph );
+  $('#outputDiv').append( newParagraph );
 };
 //
 function startServerSideOperation()
@@ -48,7 +55,7 @@ function startServerSideOperation()
   // post with ajax;
   $.ajax({
    type: "POST",
-   data:"inputObject",
+   data:inputObject,
    url: "/pathpost",
    success: function(data){
           console.log( 'post successfull: ' + data );

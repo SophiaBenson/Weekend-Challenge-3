@@ -21,21 +21,25 @@ app.get( '/', function( req, res ){
   res.end();
 });
 
-app.get('/calc',function (req, res) {
-  console.log("Bird thinks about Calc");
-  res.write("Bionic Bird is Calculating your DEMISE");
-  res.end();
-});
+// app.get('/calc',function (req, res) {
+//   console.log("Bird thinks about Calc");
+//   res.write("Bionic Bird is Calculating your DEMISE");
+//   res.end();
+// });
 
 app.get('/index', function (req, res) {
   res.sendFile( path.resolve( 'public/index.html' ) );
 });
+
 app.post('/pathpost', urlencodedParser, function (req, res) {
 // var append= Number(req.body.x) + req.body.z + Number(req.body.y);
-  var append = (calculate(req.body.x ,req.body.y, req.body.z));
+var a =Number(req.body.x);
+var b =Number(req.body.y);
+var c= req.body.z;
+  var append = (calculate(a,b,c));
 // append();
 var string = append.toString();
-  res.send(string + "<br><button id='clear'>clear</button> ");
+  res.send(string);
 
 
 
